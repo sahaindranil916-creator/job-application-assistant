@@ -1,5 +1,6 @@
 streamlit
 pandas
+pypdf
 python-dotenv
 gspread
 google-auth

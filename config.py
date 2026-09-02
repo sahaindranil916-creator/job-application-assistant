@@ -1,7 +1,10 @@
-KEYWORDS = [
-    "record to report", "rtr", "general ledger", "gl accountant",
+DEFAULT_KEYWORDS = [
+    "record to report", "rtr", "general ledger", "gl",
     "bank reconciliation", "fixed assets", "financial accounting",
-    "month end", "reconciliation", "customer service",
-    "process developer", "sap", "microsoft dynamics 365"
+    "month end", "reconciliation", "sap",
+    "microsoft dynamics 365", "blackline",
+    "journal entries", "customer service", "salesforce",
+    "process development", "audit"
 ]
-MIN_SCORE = 15
+
+MAX_KEYWORDS = 30

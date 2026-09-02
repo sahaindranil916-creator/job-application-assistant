@@ -1,27 +1,19 @@
-# Job Application Assistant V2
+# Job Application Assistant V3
 
-A local Streamlit dashboard plus optional Google Sheets sync.
+Chromebook-friendly Streamlit app with resume-based job matching.
 
-## Features
-- Import jobs from permitted APIs, feeds, CSV exports, or manually supplied links
-- Score jobs against your profile keywords
-- Review jobs before applying
-- Track application status
-- Export/import CSV
+## New in V3
+- Upload your resume as a PDF
+- Extract resume text automatically
+- Generate matching keywords from the resume
+- Score imported jobs against your actual resume
+- Show matched skills and missing keywords
+- Export the filtered tracker
 - Optional Google Sheets sync
 
-## Run locally
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
+## Deploy
+Replace the files in your existing GitHub repository with these V3 files.
+Streamlit will redeploy automatically.
 
 ## Google Sheets
-1. Create a Google Cloud project and service account.
-2. Enable Google Sheets API and Google Drive API.
-3. Download the service-account JSON credentials.
-4. Save it as `service_account.json` in this folder.
-5. Share your target Google Sheet with the service-account email.
-6. Set `GOOGLE_SHEET_NAME` in `.env`.
-
-The app intentionally does not bypass CAPTCHAs, logins, or website protections.
+Keep `service_account.json` out of GitHub. For production, use Streamlit Secrets.

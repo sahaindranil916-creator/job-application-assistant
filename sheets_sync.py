@@ -1,14 +1,18 @@
 import os
-import pandas as pd
 
 def sync_dataframe_to_sheet(df):
     sheet_name = os.getenv("GOOGLE_SHEET_NAME")
     if not sheet_name:
         raise ValueError("GOOGLE_SHEET_NAME is not configured.")
-    if not os.path.exists("service_account.json"):
-        raise FileNotFoundError("Add service_account.json before syncing.")
 
     import gspread
+
+    if not os.path.exists("service_account.json"):
+        raise FileNotFoundError(
+            "For local use, add service_account.json. "
+            "For Streamlit Cloud, configure credentials using Streamlit Secrets."
+        )
+
     gc = gspread.service_account(filename="service_account.json")
     sh = gc.open(sheet_name)
 
