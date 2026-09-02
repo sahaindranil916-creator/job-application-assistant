@@ -1,6 +1,4 @@
-streamlit
-pandas
-pypdf
-python-dotenv
-gspread
-google-auth
+streamlit>=1.40
+pandas>=2.0
+pypdf>=5.0
+requests>=2.31

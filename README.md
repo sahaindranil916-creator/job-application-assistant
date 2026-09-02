@@ -1,19 +1,22 @@
-# Job Application Assistant V3
+# Job Application Assistant — Final
 
-Chromebook-friendly Streamlit app with resume-based job matching.
+Chromebook-friendly, cloud-deployable Streamlit application.
 
-## New in V3
-- Upload your resume as a PDF
-- Extract resume text automatically
-- Generate matching keywords from the resume
-- Score imported jobs against your actual resume
-- Show matched skills and missing keywords
-- Export the filtered tracker
-- Optional Google Sheets sync
+## Features
+- Resume PDF upload and analysis
+- Resume-based job matching and ranking
+- Live job search from enabled permitted sources
+- CSV job imports
+- Duplicate removal
+- Application status and follow-up tracking
+- Truthful cover-letter drafting
+- CSV tracker export
+
+## Safety and platform limits
+The app does not bypass CAPTCHAs, logins, anti-bot controls or website terms. It does not blindly submit applications. It prepares, ranks and tracks applications; you review and submit on official application pages.
 
 ## Deploy
-Replace the files in your existing GitHub repository with these V3 files.
-Streamlit will redeploy automatically.
+Replace the files in your GitHub repository with these files and commit. Streamlit Community Cloud should redeploy automatically.
 
-## Google Sheets
-Keep `service_account.json` out of GitHub. For production, use Streamlit Secrets.
+## CSV columns
+title, company, location, source, description, apply_url, remote
