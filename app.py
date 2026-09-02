@@ -401,3 +401,5 @@ uploaded_file = st.file_uploader(
 if uploaded_file is not None:
     st.success("JSON file uploaded successfully!")
 https://indranil-job-assistant.streamlit.app/
+if uploaded_file is not None:
+    st.success("JSON file uploaded successfully!")
