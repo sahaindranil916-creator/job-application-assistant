@@ -391,3 +391,12 @@ st.caption(
     "Final build: designed for human-reviewed applications "
     "using permitted data sources."
 )
+st.subheader("Connect Gmail")
+
+uploaded_file = st.file_uploader(
+    "Upload your Google OAuth JSON file",
+    type="json"
+)
+
+if uploaded_file is not None:
+    st.success("JSON file uploaded successfully!")
