@@ -397,11 +397,40 @@ st.caption(
 )
 st.subheader("Connect Gmail")
 
+SCOPES = [
+    "https://www.googleapis.com/auth/gmail.readonly"
+]
+
 uploaded_file = st.file_uploader(
     "Upload your Google OAuth JSON file",
     type="json"
 )
 
 if uploaded_file is not None:
-    st.success("JSON file uploaded successfully!")
+
+    client_config = json.load(uploaded_file)
+
+    redirect_uri = "https://indranil-job-assistant.streamlit.app/"
+
+    flow = Flow.from_client_config(
+        client_config,
+        scopes=SCOPES,
+        redirect_uri=redirect_uri
+    )
+
+    if "gmail_credentials" not in st.session_state:
+
+        auth_url, state = flow.authorization_url(
+            access_type="offline",
+            prompt="consent"
+        )
+
+        st.link_button(
+            "Connect Gmail Account",
+            auth_url
+        )
+
+    else:
+        st.success("Gmail connected successfully!")
+        
 
